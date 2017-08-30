@@ -3,11 +3,10 @@ using System.Net;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Threading.Tasks;
-using HttpClientSample.Core;
 
-namespace HttpClientSample
+namespace HttpClientSample.App
 {
-    class Program
+    public class Program
     {
         static HttpClient client = new HttpClient();
 
@@ -52,7 +51,7 @@ namespace HttpClientSample
             return response.StatusCode;
         }
 
-        static void Main()
+        static void Main(string[] args)
         {
             RunAsync().Wait();
         }
