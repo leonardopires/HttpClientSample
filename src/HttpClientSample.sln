@@ -9,6 +9,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HttpClientSample.Core", "Ht
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HttpClientSample.App", "HttpClientSample.App\HttpClientSample.App.csproj", "{E1EEEC2C-9F8A-4922-B97C-194B8FD7C9BB}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HttpClientSample.Test", "HttpClientSample.Test\HttpClientSample.Test.csproj", "{20C9D758-F92B-4A65-A674-134CB67F0821}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{E1EEEC2C-9F8A-4922-B97C-194B8FD7C9BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E1EEEC2C-9F8A-4922-B97C-194B8FD7C9BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E1EEEC2C-9F8A-4922-B97C-194B8FD7C9BB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{20C9D758-F92B-4A65-A674-134CB67F0821}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{20C9D758-F92B-4A65-A674-134CB67F0821}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{20C9D758-F92B-4A65-A674-134CB67F0821}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{20C9D758-F92B-4A65-A674-134CB67F0821}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
