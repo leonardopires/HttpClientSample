@@ -14,7 +14,7 @@ namespace HttpClientSample.Test
         {
             var builder = new ContainerBuilder();
             builder.RegisterModule<CoreModule>();
-            IContainer container = builder.Build();
+            var container = builder.Build();
 
             var client1 = container.Resolve<HttpClient>();
 
@@ -22,7 +22,7 @@ namespace HttpClientSample.Test
             {
                 var client2 = container.Resolve<HttpClient>();
 
-                client2.Should().BeSameAs(client1, "There must be just one instance of HttpClient in order to keep the socket count low");
+                client2.Should().BeSameAs(client1, "There must be only one instance of HttpClient in order to keep the socket count low");
             }
         }
     }
