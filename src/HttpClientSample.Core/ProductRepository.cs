@@ -40,8 +40,8 @@ namespace HttpClientSample.Core
             response.EnsureSuccessStatusCode();
 
             // Deserialize the updated product from the response body.
-            product = await response.Content.ReadAsAsync<Product>().ConfigureAwait(false);
-            return product;
+            var result = await response.Content.ReadAsAsync<Product>().ConfigureAwait(false);
+            return result;
         }
 
         public async Task<int> Delete(string id)
