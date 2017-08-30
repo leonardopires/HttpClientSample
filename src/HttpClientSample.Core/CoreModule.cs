@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Text;
@@ -19,6 +20,7 @@ namespace HttpClientSample.Core
                 return client;
             }).AsSelf().SingleInstance();
 
+            builder.Register(c => Console.Out).Keyed<TextWriter>("LoggerWriter");
             builder.RegisterType<ConsoleLogger>().As<ILogger>();
             builder.RegisterType<ProductRepository>().As<IRepository<Product>>().InstancePerLifetimeScope();
             builder.RegisterType<SampleApplication>().AsSelf();

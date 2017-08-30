@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Net;
 using System.Net.Http;
 using System.Net.Http.Headers;
@@ -24,13 +25,17 @@ namespace HttpClientSample.App
         private static IContainer Container => container.Value;
 
 
-        static void Main()
+        static int Main()
         {
-            RunAsync().Wait();
+            var result = RunAsync().Result;
+            Console.ReadLine();
+            return result;
         }
 
-        static async Task RunAsync()
+        static async Task<int> RunAsync()
         {
+            var result = 0;
+            var log = Container.Resolve<ILogger>();
             try
             {
                 var app = Container.Resolve<SampleApplication>();
@@ -38,11 +43,12 @@ namespace HttpClientSample.App
             }
             catch (Exception e)
             {
-                Console.WriteLine(e.Message);
+                log.WriteLine(e.Message);
+                result = e.HResult;
             }
 
-            Console.Write("FINISHED: Press ENTER to leave...");
-            Console.ReadLine();
+            log.WriteLine("FINISHED: Press ENTER to leave...");
+            return result;
         }
 
     }
