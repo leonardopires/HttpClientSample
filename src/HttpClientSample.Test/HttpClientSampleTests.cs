@@ -16,13 +16,13 @@ namespace HttpClientSample.Test
             builder.RegisterModule<CoreModule>();
             var container = builder.Build();
 
-            var client1 = container.Resolve<HttpClient>();
+            var rootScopeClient = container.Resolve<HttpClient>();
 
             using (container.BeginLifetimeScope())
             {
-                var client2 = container.Resolve<HttpClient>();
+                var innerScopeClient = container.Resolve<HttpClient>();
 
-                client2.Should().BeSameAs(client1, "There must be only one instance of HttpClient in order to keep the socket count low");
+                innerScopeClient.Should().BeSameAs(rootScopeClient, "There must be only one instance of HttpClient in order to keep the socket count low");
             }
         }
     }
